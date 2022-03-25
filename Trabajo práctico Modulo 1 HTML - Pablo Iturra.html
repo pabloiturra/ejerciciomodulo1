@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap.css"> -->
+    <!-- <link rel="stylesheet" href="assets/js/bootstrap.js"> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width-device-width, initial scale=1.0">
+    <link rel="stylesheet" href="assets/css/navbar style.css">
+    <link rel="stylesheet" href="assets/js/iva.js">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+    crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+
+        $(function() {
+            document.getElementById('btn_modal').onclick = function()
+            {
+                var nombre = document.getElementById('Nombre').value;
+                var apellido = document.getElementById('Apellido').value;
+
+                if($('#lavado1').is(':checked') && $('#lavado2').is(':checked'))
+                {
+                    var lavado = document.getElementById('lavado').value;
+                    document.getElementById("modal-text").innerHTML = nombre + apellido + 'El valor del lavado es: ' + ((15000+7000)*1.19);
+                }
+
+                else if($('#lavado1').is(':checked'))
+                {
+                    var lavado = document.getElementById('lavado').value;
+                    document.getElementById("modal-text").innerHTML = nombre + apellido + 'El valor del lavado es: ' + (7000*1.19);
+                }
+                else if($('#lavado2').is(':checked'))
+                {
+                    var motor = document.getElementById('motor').value;
+                    document.getElementById("modal-text").innerHTML = nombre + apellido + 'El valor del lavado es: ' + (15000*1.19);
+                }
+
+
+
+            }
+        });
+
+
+    </script>
+    <title>Lavado de Vehículos</title>
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Lavado de vehículos</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Servicios
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container" style="margin-top: 20px;">
+        <br/>
+        <h2>Registro del cliente</h2>
+        <br/>
+
+        <form>
+            <div class="row"> <!-- Fila para utilizar el sistema de grillas -->
+                <div class="col-lg-10 col-md-10 col-sm-10" >
+                    <div class="mb-3">
+                        <label for="Rut" class="form-label">Rut</label>
+                        <input type="int" size="8" class="form-control" id="Rut" aria-describedby="Rut">
+                        <div id="Rut" class="form-text">Ingrese su rut sin puntos.</div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <div class="mb-3">
+                        <label for="Digit" class="form-label">Dígito verificador</label>
+                        <input type="int, k, K" size="1" class="form-control" id="digit">
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <label for="Nombre" class="form-label">Nombre</label>
+                <input type="text" size="50" class="form-control" id="Nombre" aria-describedby="Rut">
+                <div id="Nombre" class="form-text">Igrese su nombre</div>
+            </div>
+            <br/>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <label for="Apellido" class="form-label">Apellido</label>
+                <input type="text" size="50" class="form-control" id="Apellido" aria-describedby="Rut">
+                <div id="Apellido" class="form-text">Igrese su Apellido</div>
+            </div>
+            <br/>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <label for="Direccion" class="form-label">Dirección</label>
+                <input type="text, int" size="100" class="form-control" id="Apellido" aria-describedby="Rut">
+                <div id="Direccion" class="form-text">Igrese su Dirección</div>
+            </div>
+            <br/>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <label for="Comuna" class="form-label">Comuna</label>
+                <input class="form-control" id="Apellido" aria-describedby="Rut">
+                <div id="Comuna" class="form-text">Igrese su comuna</div>
+            </div>
+            <br/>
+
+        </form>
+
+        <br/>
+        <h2>Registro del Vehículo</h2>
+        <br/>
+
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Tipo de vehículo</button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">Furgón</a></li>
+                <li><a class="dropdown-item" href="#">Automóvil</a></li>
+                <li><a class="dropdown-item" href="#">Camión</a></li>
+                <li><a class="dropdown-item" href="#">Camioneta</a></li>
+                <li><a class="dropdown-item" href="#">Moto</a></li>
+            </ul>
+        </div>
+        <br/>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <label for="Marca" class="form-label">Marca</label>
+            <input type="text" class="form-control" id="Nombre" aria-describedby="Rut">
+            <div id="MArca" class="form-text">Igrese la marca del vehículo</div>
+        </div>
+        <br/>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <label for="Modelo" class="form-label">Modelo</label>
+            <input type="text" class="form-control" id="Apellido" aria-describedby="Rut">
+            <div id="Modelo" class="form-text">Igrese el modelo del vehículo</div>
+        </div>
+        <br/>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <label for="Año" class="form-label">Año</label>
+            <input type="int" class="form-control" id="Apellido" aria-describedby="Rut">
+            <div id="Año" class="form-text">Igrese el año del vehículo</div>
+        </div>
+        <br/>
+        <label for="Revision" class="form-label">Revisión técnica al día</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+                Si
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+            <label class="form-check-label" for="exampleRadios2">
+                No
+            </label>
+        </div>
+
+        <br/>
+        <h2>Servicios</h2>
+        <br/>
+
+        <div class="row row-cols-1 row-cols-md-2 mb-3 text-center">
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal">Lavado exterior e interior</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">$7000<small class="text-muted fw-light">/Valor neto</small></h1>
+                    </div>
+                    <div id="lavado">
+                        <label class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="" id="lavado1">
+                            Lavado exterior e interior
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal">Lavado de motor</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">$15000<small class="text-muted fw-light">/Valor neto</small></h1>
+                    </div>
+
+                    <div id="motor">
+                        <label class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="" id="lavado2">
+                            Lavado de motor
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="list-group">
+
+        </div>
+        <br/>
+
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                Encargado
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                <li><a class="dropdown-item" href="#">Angelina Jolie</a></li>
+                <li><a class="dropdown-item" href="#">Brad Pitt</a></li>
+            </ul>
+        </div>
+        <br/>
+
+        <div class="mb-3">
+            <label for="Fecha" class="form-label">Fecha</label>
+            <input type="date" class="form-control" id="Rut" aria-describedby="Rut">
+            <div id="Rut" class="form-text">Ingrese la fecha de término</div>
+        </div>
+        <div class="mb-3 form-check">
+
+        </div>
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id="btn_modal">
+            Contratar
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Resumen</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Gracias por contratar nuestros Servicios</p>
+                        <div id="modal-text"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+
+</body>
+
+<footer>
+
+</footer>
+</html>
